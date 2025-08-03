@@ -90,8 +90,10 @@ class _SearchState extends State<Search> {
         onQueryChanged: model.onQueryChanged,
         scrollPadding: EdgeInsets.zero,
         transition: CircularFloatingSearchBarTransition(),
-        builder: (context, _) =>
-            buildExpandableBody(model, definitionListConsumer),
+        builder: (context, _) => Padding(
+            padding: const EdgeInsets.only(top: 15),
+            child: buildExpandableBody(model, definitionListConsumer),
+        ),
         body: buildDefinitionSpace(),
       ),
     );
