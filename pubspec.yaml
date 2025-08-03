@@ -1,12 +1,13 @@
 name: lanelexicon
-description: A new Flutter project.
+description: Lane's Lexicon - An Arabic English Dictionary
 
 publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
 version: 2.4.2+19
 
 environment:
-  sdk: ">=2.16.0 <4.0.0"
+  sdk: ^3.1.0
+  flutter: ^3.13.0
 
 dependencies:
   flutter:
@@ -22,7 +23,6 @@ dependencies:
   shared_preferences: ^2.2.2
   share_plus: ^7.2.1
   get_it: ^7.6.4
-  # in_app_review: ^2.0.8
   flutter_colorpicker: ^1.0.3
   sqflite_common_ffi: ^2.3.0+2
   html: ^0.15.4
@@ -36,7 +36,6 @@ dev_dependencies:
 
 
 flutter_launcher_icons:
-  #  image_path: "assets/images/icon-128x128.png"
   image_path_android: "assets/lane.png"
   image_path_ios: "assets/lane.png"
   android: true # can specify file name here e.g. "ic_launcher"
