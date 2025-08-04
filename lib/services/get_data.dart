@@ -35,6 +35,14 @@ class DatabaseAccess {
       }
     }
     Database db = await openDatabase(path);
+
+    // Enable WAL mode
+    try {
+        await db.execute('PRAGMA journal_mode=WAL');
+    } catch (e) {
+        await db.rawQuery('PRAGMA journal_mode=WAL');
+    }
+
     return db;
   }
 
