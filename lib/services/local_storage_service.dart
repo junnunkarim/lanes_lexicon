@@ -27,7 +27,7 @@ class LocalStorageService {
     var userPreferencesJson = _getFromDisk(userPreferencesKey);
     if (userPreferencesJson == null) {
       return UserPreferences.fromJson(json.decode(
-          '{"darkTheme":false,"history":"","appUsage":1,"highlightText":null,"highlightTile":null,"background":null,"searchBar":null,"fontSize":0.0,"font":"Amiri"}'));
+          '{"darkTheme":false,"history":"","appUsage":1,"highlightText":null,"highlightTile":null,"background":null,"searchBar":null,"fontSize":0.0,"font":"Dubai"}'));
     }
     return UserPreferences.fromJson(json.decode(userPreferencesJson));
   }
@@ -70,7 +70,7 @@ class LocalStorageService {
   double get fontSizeDelta => _getFromDisk(fontSizeKey) ?? 0.0;
   set fontSizeDelta(double value) => _saveToDisk(fontSizeKey, value);
 
-  String get font => _getFromDisk(fontKey) ?? 'Amiri';
+  String get font => _getFromDisk(fontKey) ?? 'Dubai';
   set font(String? value) => _saveToDisk(fontKey, value);
 
   void _saveToDisk<T>(String key, T content) {
