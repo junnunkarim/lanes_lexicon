@@ -104,7 +104,7 @@ class _FontSelectorState extends State<FontSelector> {
           Provider.of<ThemeModel>(context, listen: false).refreshTheme();
         },
         items:
-            ['Amiri', 'Roboto'].map<DropdownMenuItem<String>>((String value) {
+            ['Amiri', 'Dubai', 'Iosevka', 'Roboto'].map<DropdownMenuItem<String>>((String value) {
           return DropdownMenuItem<String>(
             value: value,
             child: Text(value),

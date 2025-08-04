@@ -64,3 +64,9 @@ flutter:
     - family: Amiri
       fonts:
         - asset: fonts/Amiri-Regular.ttf
+    - family: Dubai
+      fonts:
+        - asset: fonts/Dubai-Regular.ttf
+    - family: Iosevka
+      fonts:
+        - asset: fonts/Iosevka.ttf
