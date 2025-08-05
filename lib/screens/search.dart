@@ -58,7 +58,7 @@ class _SearchState extends State<Search> {
         transitionDuration: const Duration(milliseconds: 300),
         transitionCurve: Curves.easeInOutCubic,
         physics: const BouncingScrollPhysics(),
-        debounceDelay: const Duration(milliseconds: 800),
+        debounceDelay: const Duration(milliseconds: 500),
         axisAlignment: 0.0,
         openAxisAlignment: 0.0,
         width: isPortrait ? width : 800,

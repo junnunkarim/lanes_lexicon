@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import '../../classes/definition_provider.dart';
-import '../services/favorites_service.dart';
+
+import '../classes/definition_provider.dart' show DefinitionProvider;
+import '../services/favorites_service.dart' show FavoritesService;
 
 class FavIconWidget extends StatefulWidget {
   const FavIconWidget({super.key, this.definitionList, this.index});

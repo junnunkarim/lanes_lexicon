@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../classes/definition_provider.dart';
-import '../screens/donate.dart';
-import '../screens/favorites.dart';
-import '../screens/quranic_words.dart';
-import 'home_screen.dart';
-import 'definition_list.dart';
+
+import '../classes/definition_provider.dart' show DefinitionProvider;
+import '../screens/donate.dart' show Donate;
+import '../screens/favorites.dart' show Favorites;
+import '../screens/quranic_words.dart' show QuranicWords;
+import 'definition_list.dart' show DefinitionList;
+import 'home_screen.dart' show HomeScreen;
 
 class DefinitionSpace extends StatefulWidget {
   const DefinitionSpace({

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
-import '../../classes/definition_provider.dart';
+
+import '../classes/definition_provider.dart' show DefinitionProvider;
 
 class HomePageCards extends StatelessWidget {
   const HomePageCards({

@@ -6,8 +6,8 @@ import '../../classes/definition_provider.dart';
 import '../../service_locator.dart';
 import '../../services/local_storage_service.dart';
 import '../services/context_menu_service.dart';
-import 'fav_icon_widget.dart';
-import 'quran_occurrence_alert.dart';
+import 'fav_icon_widget.dart' show FavIconWidget;
+import 'quran_occurrence_alert.dart' show quranOccurrenceDialog;
 
 class DefinitionTile extends StatelessWidget {
   final DefinitionProvider? definitionList;

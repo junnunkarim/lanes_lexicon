@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+
 import '../../classes/app_theme.dart';
 import '../../classes/definition_provider.dart';
 import '../../service_locator.dart';
 import '../../services/local_storage_service.dart';
 import '../constants/app_constants.dart';
-import 'definition_tile.dart';
-import 'search_header_tile.dart';
+import 'definition_tile.dart' show DefinitionTile;
+import 'search_header_tile.dart' show SearchHeaderTile;
 
 class DefinitionList extends StatefulWidget {
   final DefinitionProvider definitionList;

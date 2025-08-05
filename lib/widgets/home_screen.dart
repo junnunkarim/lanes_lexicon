@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+
 import '../../constants/app_constants.dart';
-import 'home_page_cards.dart';
+import 'home_page_cards.dart' show HomePageCards;
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({

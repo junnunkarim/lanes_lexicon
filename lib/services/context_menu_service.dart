@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:html/parser.dart';
-import '../../classes/definition_provider.dart';
+
+import '../classes/definition_provider.dart' show DefinitionProvider;
 
 class ContextMenuService {
   static Future<void> showContextMenu(
