@@ -3,7 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
 import '../screens/donate.dart';
 import '../screens/favorites.dart';
-import 'package:material_floating_search_bar_2/material_floating_search_bar_2.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:html/parser.dart';
@@ -17,8 +16,8 @@ import 'quran_occurrence_alert.dart';
 
 class DefinitionSpace extends StatefulWidget {
   const DefinitionSpace({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
   @override
   State<DefinitionSpace> createState() => _DefinitionSpaceState();
 }
@@ -26,25 +25,21 @@ class DefinitionSpace extends StatefulWidget {
 class _DefinitionSpaceState extends State<DefinitionSpace> {
   @override
   Widget build(BuildContext context) {
-    //The entire screen, not just the AppBar, body contains the rest.
-    return FloatingSearchAppBar(
-      color: Theme.of(context).scaffoldBackgroundColor,
-      colorOnScroll: Theme.of(context).scaffoldBackgroundColor,
-      transitionDuration: const Duration(milliseconds: 800),
-      //The area below the app bar
-      body: Consumer<DefinitionProvider>(
-        builder: (_, definitionList, __) {
-          if (definitionList.searchType == null) {
-            return const HomeScreen();
-          } else if (definitionList.searchType == '/favorites') {
-            return const Favorites();
-          } else if (definitionList.searchType == '/donate') {
-            return const Donate();
-          } else if (definitionList.searchType == '/quranicWords') {
-            return const QuranicWords();
-          }
-          return ListView.separated(
-            padding: const EdgeInsets.fromLTRB(0, 0, 0, 100),
+    return Consumer<DefinitionProvider>(
+      builder: (_, definitionList, __) {
+        Widget bodyContent;
+
+        if (definitionList.searchType == null) {
+          bodyContent = const HomeScreen();
+        } else if (definitionList.searchType == '/favorites') {
+          bodyContent = const Favorites();
+        } else if (definitionList.searchType == '/donate') {
+          bodyContent = const Donate();
+        } else if (definitionList.searchType == '/quranicWords') {
+          bodyContent = const QuranicWords();
+        } else {
+          bodyContent = ListView.separated(
+            padding: const EdgeInsets.fromLTRB(0, 70, 0, 100),
             itemCount: definitionList.definition.length + 1,
             separatorBuilder: (context, index) {
               return definitionList.isRoot[index] == 1
@@ -124,23 +119,25 @@ class _DefinitionSpaceState extends State<DefinitionSpace> {
               );
             },
           );
-        },
-      ),
+        }
+
+        return bodyContent;
+      },
     );
   }
 }
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
     return OrientationBuilder(
       builder: (context, orientation) {
         return GridView.count(
-          padding: const EdgeInsets.all(8),
+          padding: const EdgeInsets.fromLTRB(10, 70, 10, 50),
           crossAxisCount: orientation == Orientation.portrait ? 2 : 4,
           // crossAxisCount: 2,
           children: [
@@ -177,11 +174,11 @@ class HomeScreen extends StatelessWidget {
 
 class HomePageCards extends StatelessWidget {
   const HomePageCards({
-    Key? key,
+    super.key,
     required this.imagePath,
     this.route,
     this.uri,
-  }) : super(key: key);
+  });
   final String imagePath;
   final String? route;
   final Uri? uri;
@@ -198,7 +195,7 @@ class HomePageCards extends StatelessWidget {
         padding: const EdgeInsets.all(8.0),
         child: Container(
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(15),
+            borderRadius: BorderRadius.circular(30),
             image: DecorationImage(
                 image: AssetImage(imagePath), fit: BoxFit.cover),
           ),
@@ -224,10 +221,10 @@ class DefinitionTile extends StatelessWidget {
   final DefinitionProvider? definitionList;
   final int? index;
   const DefinitionTile({
-    Key? key,
+    super.key,
     this.definitionList,
     this.index,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -367,8 +364,7 @@ class DefinitionTile extends StatelessWidget {
 }
 
 class FavIconWidget extends StatefulWidget {
-  const FavIconWidget({Key? key, this.definitionList, this.index})
-      : super(key: key);
+  const FavIconWidget({super.key, this.definitionList, this.index});
   final DefinitionProvider? definitionList;
   final int? index;
   @override

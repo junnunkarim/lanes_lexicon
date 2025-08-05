@@ -6,7 +6,7 @@ import 'package:share_plus/share_plus.dart';
 class CommonDrawer extends StatelessWidget {
   final String currentScreen;
 
-  const CommonDrawer({Key? key, required this.currentScreen}) : super(key: key);
+  const CommonDrawer({super.key, required this.currentScreen});
 
   @override
   Drawer build(BuildContext context) {
@@ -109,7 +109,7 @@ class CommonDrawer extends StatelessWidget {
 }
 
 class RateUs extends StatelessWidget {
-  const RateUs({Key? key}) : super(key: key);
+  const RateUs({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -145,7 +145,8 @@ class RateUs extends StatelessWidget {
             color: Theme.of(context).iconTheme.color,
           ),
           onPressed: () {
-            Share.share('Check out this Lanes Lexicon App : $lanesLexiconAndroidUri');
+            Share.share(
+                'Check out this Lanes Lexicon App : $lanesLexiconAndroidUri');
           },
         ),
       ],
@@ -158,12 +159,13 @@ class DrawerItem extends StatelessWidget {
   final String title;
   final String route;
   final IconData icon;
-  const DrawerItem({Key? key, 
+  const DrawerItem({
+    super.key,
     required this.currentScreen,
     required this.title,
     required this.route,
     required this.icon,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -200,7 +202,7 @@ class DrawerItem extends StatelessWidget {
 }
 
 class VerbForms extends StatelessWidget {
-  const VerbForms({Key? key}) : super(key: key);
+  const VerbForms({super.key});
 
   @override
   Widget build(BuildContext context) {

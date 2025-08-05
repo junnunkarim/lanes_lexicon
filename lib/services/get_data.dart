@@ -38,9 +38,9 @@ class DatabaseAccess {
 
     // Enable WAL mode
     try {
-        await db.execute('PRAGMA journal_mode=WAL');
+      await db.execute('PRAGMA journal_mode=WAL');
     } catch (e) {
-        await db.rawQuery('PRAGMA journal_mode=WAL');
+      await db.rawQuery('PRAGMA journal_mode=WAL');
     }
 
     return db;
@@ -85,15 +85,7 @@ class DatabaseAccess {
     }
 
     List<Map<String, dynamic>> definition = await db.rawQuery(query);
-    DefinitionProvider allDefinitions = DefinitionProvider(
-      id: [],
-      word: [],
-      definition: [],
-      isRoot: [],
-      highlight: [],
-      quranOccurrence: [],
-      favoriteFlag: [],
-    );
+    DefinitionProvider allDefinitions = DefinitionProvider();
 
     for (var element in definition) {
       element.forEach((key, value) {

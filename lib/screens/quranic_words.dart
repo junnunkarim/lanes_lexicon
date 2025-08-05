@@ -3,7 +3,7 @@ import '../constants/app_constants.dart';
 import 'browse.dart';
 
 class QuranicWords extends StatefulWidget {
-  const QuranicWords({Key? key}) : super(key: key);
+  const QuranicWords({super.key});
   @override
   State<QuranicWords> createState() => _QuranicWordsState();
 }
@@ -24,7 +24,7 @@ class _QuranicWordsState extends State<QuranicWords> {
               style: Theme.of(context).textTheme.bodyLarge,
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              padding: const EdgeInsets.fromLTRB(16, 20, 16, 0),
               child: ListTile(
                 leading: const Text(''),
                 title: Row(
@@ -60,13 +60,15 @@ class _QuranicWordsState extends State<QuranicWords> {
                                       .primaryColor
                                       .withAlpha(20),
                               borderRadius: const BorderRadius.all(
-                                Radius.circular(10),
+                                Radius.circular(30),
                               ),
                             ),
                             child: ListTile(
                               onTap: () async {
                                 buildDefinitionAlert(
-                                    context, quranicWords.data![j]['word']);
+                                  context,
+                                  quranicWords.data![j]['word'] as String,
+                                );
                               },
                               leading: Text(
                                 '${j + 1} ',
@@ -85,7 +87,7 @@ class _QuranicWordsState extends State<QuranicWords> {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
-                                    quranicWords.data![j]['word'],
+                                    quranicWords.data![j]['word'] as String,
                                     style:
                                         Theme.of(context).textTheme.bodyLarge,
                                   ),
