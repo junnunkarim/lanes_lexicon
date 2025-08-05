@@ -24,7 +24,7 @@ class _DefinitionListState extends State<DefinitionList> {
   @override
   Widget build(BuildContext context) {
     return ListView.separated(
-      padding: const EdgeInsets.fromLTRB(0, 70, 0, 100),
+      padding: const EdgeInsets.fromLTRB(5, 10, 5, 100),
       itemCount: widget.definitionList.definition.length + 1,
       separatorBuilder: (context, index) {
         return widget.definitionList.isRoot[index] == 1

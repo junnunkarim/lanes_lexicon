@@ -1,17 +1,20 @@
 import 'package:flutter/material.dart';
 import '../widgets/drawer.dart';
 
-Scaffold abbreviationsView(
-  BuildContext context,
-  String title,
-  List<String> abbreviations,
-  List<String> fullForms
-) {
+Scaffold abbreviationsView(BuildContext context, String title,
+    List<String> abbreviations, List<String> fullForms) {
   final appbar = AppBar(
     toolbarHeight: 56,
     title: Text(
       title,
       style: Theme.of(context).textTheme.titleLarge,
+    ),
+    shadowColor: Colors.grey,
+    shape: const RoundedRectangleBorder(
+      borderRadius: BorderRadius.only(
+        bottomLeft: Radius.circular(15),
+        bottomRight: Radius.circular(15),
+      ),
     ),
     backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
     iconTheme: Theme.of(context).iconTheme,

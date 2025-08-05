@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-
-import '../classes/definition_provider.dart' show DefinitionProvider;
+import '../classes/definition_provider.dart';
 
 class SearchHeaderTile extends StatelessWidget {
   final DefinitionProvider definitionList;
   final VoidCallback onTap;
-
+  
   const SearchHeaderTile({
     super.key,
     required this.definitionList,
@@ -61,7 +60,7 @@ class SearchHeaderTile extends StatelessWidget {
         ),
       );
     }
-
+    
     return Container();
   }
 }

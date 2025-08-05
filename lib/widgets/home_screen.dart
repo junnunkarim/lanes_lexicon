@@ -13,7 +13,7 @@ class HomeScreen extends StatelessWidget {
     return OrientationBuilder(
       builder: (context, orientation) {
         return GridView.count(
-          padding: const EdgeInsets.fromLTRB(10, 70, 10, 50),
+          padding: const EdgeInsets.all(10),
           crossAxisCount: orientation == Orientation.portrait ? 2 : 4,
           children: [
             const HomePageCards(

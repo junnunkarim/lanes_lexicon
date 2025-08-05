@@ -13,7 +13,7 @@ class CommonDrawer extends StatelessWidget {
     return Drawer(
       child: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.fromLTRB(0, 0, 0, 65),
+          padding: const EdgeInsets.fromLTRB(5, 20, 5, 20),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [

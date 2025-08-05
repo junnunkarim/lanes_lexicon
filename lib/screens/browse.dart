@@ -8,7 +8,7 @@ import '../constants/app_constants.dart';
 import '../widgets/quran_occurrence_alert.dart';
 
 class Browse extends StatefulWidget {
-  const Browse({Key? key}) : super(key: key);
+  const Browse({super.key});
 
   @override
   State<Browse> createState() => _BrowseState();
@@ -23,6 +23,13 @@ class _BrowseState extends State<Browse> {
         title: Text(
           browseScreenTitle,
           style: Theme.of(context).textTheme.titleLarge,
+        ),
+        shadowColor: Colors.grey,
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+            bottomLeft: Radius.circular(15),
+            bottomRight: Radius.circular(15),
+          ),
         ),
         backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
         iconTheme: Theme.of(context).iconTheme,

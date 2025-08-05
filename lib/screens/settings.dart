@@ -27,6 +27,13 @@ class _SettingsState extends State<Settings> {
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 56,
+        shadowColor: Colors.grey,
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+            bottomLeft: Radius.circular(15),
+            bottomRight: Radius.circular(15),
+          ),
+        ),
         title: Text(
           settingsScreenTitle,
           style: Theme.of(context).textTheme.titleLarge,

@@ -23,6 +23,13 @@ class _AboutAppState extends State<AboutApp> {
           aboutAppScreenTitle,
           style: Theme.of(context).textTheme.titleLarge,
         ),
+        shadowColor: Colors.grey,
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+            bottomLeft: Radius.circular(15),
+            bottomRight: Radius.circular(15),
+          ),
+        ),
         backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
         iconTheme: Theme.of(context).iconTheme,
       ),

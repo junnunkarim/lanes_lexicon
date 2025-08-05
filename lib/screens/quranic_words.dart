@@ -13,7 +13,7 @@ class _QuranicWordsState extends State<QuranicWords> {
   Widget build(BuildContext context) {
     return Center(
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 8.0),
+        padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -24,7 +24,7 @@ class _QuranicWordsState extends State<QuranicWords> {
               style: Theme.of(context).textTheme.bodyLarge,
             ),
             Padding(
-              padding: const EdgeInsets.fromLTRB(16, 20, 16, 0),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
               child: ListTile(
                 leading: const Text(''),
                 title: Row(

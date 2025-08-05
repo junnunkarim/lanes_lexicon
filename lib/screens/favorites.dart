@@ -114,7 +114,7 @@ class _FavoritesState extends State<Favorites> {
         color: index % 2 == 0
             ? Theme.of(context).scaffoldBackgroundColor
             : Theme.of(context).primaryColor.withOpacity(0.08),
-        borderRadius: const BorderRadius.all(Radius.circular(10)),
+        borderRadius: const BorderRadius.all(Radius.circular(30)),
       ),
       child: ListTile(
         onTap: word.isNotEmpty
@@ -207,7 +207,7 @@ class _FavoritesState extends State<Favorites> {
 
     return Expanded(
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+        padding: const EdgeInsets.symmetric(horizontal: 20),
         child: _buildFavoritesList(context),
       ),
     );
@@ -217,7 +217,7 @@ class _FavoritesState extends State<Favorites> {
   Widget build(BuildContext context) {
     return Center(
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 8.0),
+        padding: const EdgeInsets.symmetric(horizontal: 10),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
