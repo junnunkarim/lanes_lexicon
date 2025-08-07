@@ -1,26 +1,18 @@
 import 'package:flutter/foundation.dart';
 
 class DefinitionProvider with ChangeNotifier {
-  DefinitionProvider({
-    required this.id,
-    required this.word,
-    required this.definition,
-    required this.isRoot,
-    required this.highlight,
-    this.searchWord,
-    this.quranOccurrence,
-    required this.favoriteFlag,
-  });
-
+  List<int?> id = [];
+  List<String?> word = [];
+  List<String?> definition = [];
+  List<int?> isRoot = [];
+  List<int?> highlight = [];
   String? searchType;
   String? searchWord;
-  List<int?> id;
-  List<String?> word;
-  List<String?> definition;
-  List<int?> isRoot;
-  List<int?> highlight;
-  List<int?>? quranOccurrence;
-  List<int?> favoriteFlag;
+  List<int?>? quranOccurrence = [];
+  List<int?> favoriteFlag = [];
+
+  // constructor
+  DefinitionProvider();
 
   void updateSearchType(String newSearchType) {
     searchType = newSearchType;
@@ -35,7 +27,8 @@ class DefinitionProvider with ChangeNotifier {
       List<int?> newHighlight,
       String newSearchWord,
       List<int?>? newQuranOccurrence,
-      List<int?> newFavoriteFlag) {
+      List<int?> newFavoriteFlag
+  ) {
     id = newId;
     word = newWord;
     definition = newDefinition;

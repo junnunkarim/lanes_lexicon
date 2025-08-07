@@ -13,7 +13,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter_colorpicker/flutter_colorpicker.dart';
 
 class Settings extends StatefulWidget {
-  const Settings({Key? key}) : super(key: key);
+  const Settings({super.key});
 
   @override
   State<Settings> createState() => _SettingsState();
@@ -27,6 +27,13 @@ class _SettingsState extends State<Settings> {
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 56,
+        shadowColor: Colors.grey,
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+            bottomLeft: Radius.circular(15),
+            bottomRight: Radius.circular(15),
+          ),
+        ),
         title: Text(
           settingsScreenTitle,
           style: Theme.of(context).textTheme.titleLarge,
@@ -74,7 +81,7 @@ class _SettingsState extends State<Settings> {
 }
 
 class FontSelector extends StatefulWidget {
-  const FontSelector({Key? key}) : super(key: key);
+  const FontSelector({super.key});
 
   @override
   State<FontSelector> createState() => _FontSelectorState();
@@ -103,8 +110,8 @@ class _FontSelectorState extends State<FontSelector> {
           });
           Provider.of<ThemeModel>(context, listen: false).refreshTheme();
         },
-        items:
-            ['Amiri', 'Dubai', 'Iosevka', 'Roboto'].map<DropdownMenuItem<String>>((String value) {
+        items: ['Amiri', 'Dubai', 'Iosevka', 'Roboto']
+            .map<DropdownMenuItem<String>>((String value) {
           return DropdownMenuItem<String>(
             value: value,
             child: Text(value),
@@ -116,7 +123,7 @@ class _FontSelectorState extends State<FontSelector> {
 }
 
 class FontSizeModifier extends StatefulWidget {
-  const FontSizeModifier({Key? key}) : super(key: key);
+  const FontSizeModifier({super.key});
 
   @override
   State<FontSizeModifier> createState() => _FontSizeModifierState();
@@ -192,9 +199,9 @@ class ColorMod extends StatefulWidget {
   final String? title;
 
   const ColorMod({
-    Key? key,
+    super.key,
     this.title,
-  }) : super(key: key);
+  });
   @override
   State<ColorMod> createState() => _ColorModState();
 }
@@ -374,7 +381,7 @@ class _ColorModState extends State<ColorMod> {
 }
 
 class ThemeIcon extends StatefulWidget {
-  const ThemeIcon({Key? key}) : super(key: key);
+  const ThemeIcon({super.key});
 
   @override
   State<ThemeIcon> createState() => _ThemeIconState();
