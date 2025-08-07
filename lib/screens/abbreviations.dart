@@ -29,32 +29,39 @@ Scaffold abbreviationsView(BuildContext context, String title,
       itemCount: abbreviations.length,
       itemBuilder: (context, index) {
         if (fullForms[index] == "") {
-          return Text(
-            abbreviations[index],
-            textScaleFactor: 2,
-            textAlign: TextAlign.left,
-            style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                  color: Colors.grey,
-                ),
+          return Padding(
+            padding: const EdgeInsets.fromLTRB(10, 30, 10, 0),
+            child: Text(
+              abbreviations[index],
+              textAlign: TextAlign.left,
+              style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                    color: Colors.grey,
+                    fontSize:
+                        Theme.of(context).textTheme.bodyLarge!.fontSize! * 2,
+                  ),
+            ),
           );
         } else {
-          return Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              SizedBox(
-                width: MediaQuery.of(context).size.width * .25,
-                child: Text(abbreviations[index],
-                    style: Theme.of(context).textTheme.bodyLarge),
-              ),
-              const SizedBox(
-                width: 10,
-              ),
-              SizedBox(
-                width: MediaQuery.of(context).size.width * .6,
-                child: Text(fullForms[index],
-                    style: Theme.of(context).textTheme.bodyLarge),
-              ),
-            ],
+          return Padding(
+            padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SizedBox(
+                  width: MediaQuery.of(context).size.width * .25,
+                  child: SelectableText(abbreviations[index],
+                      style: Theme.of(context).textTheme.bodyLarge),
+                ),
+                const SizedBox(
+                  width: 10,
+                ),
+                SizedBox(
+                  width: MediaQuery.of(context).size.width * .6,
+                  child: SelectableText(fullForms[index],
+                      style: Theme.of(context).textTheme.bodyLarge),
+                ),
+              ],
+            ),
           );
         }
       },

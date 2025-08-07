@@ -10,7 +10,7 @@ import 'search_header_tile.dart' show SearchHeaderTile;
 
 class DefinitionList extends StatefulWidget {
   final DefinitionProvider definitionList;
-  
+
   const DefinitionList({
     super.key,
     required this.definitionList,
@@ -52,12 +52,14 @@ class _DefinitionListState extends State<DefinitionList> {
             },
           );
         }
-        
+
         return ListTileTheme(
-          selectedColor: hexToColor(
-              locator<LocalStorageService>().highlightTextColor),
+          selectedColor:
+              hexToColor(locator<LocalStorageService>().highlightTextColor),
           child: DefinitionTile(
-              definitionList: widget.definitionList, index: index),
+            definitionList: widget.definitionList,
+            index: index,
+          ),
         );
       },
     );
